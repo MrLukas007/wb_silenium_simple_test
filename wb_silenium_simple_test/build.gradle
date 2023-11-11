@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+sourceSets {
+    test {
+        java {srcDir 'test'}
+        resources {srcDir 'test'}
+    }
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.codeborne:selenide:6.19.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.9'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testImplementation 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
+}
+
+[compileJava, compileTestJava]*.options.collect {options -> options.encoding = 'UTF-8'}
+
+test {
+    useJUnitPlatform()
+}

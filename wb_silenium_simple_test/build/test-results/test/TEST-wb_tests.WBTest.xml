@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="wb_tests.WBTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-10-27T16:15:58" hostname="DESKTOP-TJAM5SM" time="9.806">
+  <properties/>
+  <testcase name="Открываем сайт Wildberries" classname="wb_tests.WBTest" time="4.475"/>
+  <testcase name="Вызываем поиск" classname="wb_tests.WBTest" time="2.938"/>
+  <testcase name="Добавляем покупку в корзину" classname="wb_tests.WBTest" time="1.385"/>
+  <testcase name="Открываем корзину и проверяем покупки" classname="wb_tests.WBTest" time="1.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 118.0.5993.70 (resolved driver for Chrome 118)
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\118.0.5993.70\chromedriver.exe
+[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Projects\ui_pr\ui_pr\build\downloads\1698423358722_13988_1
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+окт. 27, 2023 7:16:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 118, so returning the closest version found: 117
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=118.0.5993.118 Platform=windows
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.19.0
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.13.0 build revision: ba948ece5b*
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on windows (d4b34353a3d2265e44d9a3ab5b052ba9)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (d4b34353a3d2265e44d9a3ab5b052ba9),proxy=null,downloadsFolder=C:\Projects\ui_pr\ui_pr\build\downloads\1698423358722_13988_1] in 1 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]
+[Test worker] INFO com.codeborne.selenide.logevents.SimpleReport - Report for [engine:junit-jupiter]/[class:wb_tests.WBTest]/[method:openWB()]
++----------------------+-----------------------------+------------+------------+
+| Element              | Subject                     | Status     | ms.        |
++----------------------+-----------------------------+------------+------------+
+| open                 | https://www.wildberries.ru/ | PASS       | 4400       |
+|   webdriver          | create()                    | PASS       | 2932       |
++----------------------+-----------------------------+------------+------------+
+
+[Test worker] INFO com.codeborne.selenide.logevents.SimpleReport - Report for [engine:junit-jupiter]/[class:wb_tests.WBTest]/[method:search()]
++----------------------------------+-----------------------------------------------------------------+------------+------------+
+| Element                          | Subject                                                         | Status     | ms.        |
++----------------------------------+-----------------------------------------------------------------+------------+------------+
+| .general-preloader               | should not be(visible)                                          | PASS       | 804        |
+| By.xpath: //*[@id='searchInput'] | set value(Видеокарта nVidia GeForce RTX 4090 Gaming X Trio 24G) | PASS       | 282        |
+| .general-preloader               | should not be(visible)                                          | PASS       | 27         |
+| By.xpath: //*[@id='searchInput'] | press enter()                                                   | PASS       | 216        |
+| .general-preloader               | should not be(visible)                                          | PASS       | 1318       |
+| By.xpath: //article              | get text()                                                      | PASS       | 54         |
++----------------------------------+-----------------------------------------------------------------+------------+------------+
+
+[Test worker] INFO com.codeborne.selenide.logevents.SimpleReport - Report for [engine:junit-jupiter]/[class:wb_tests.WBTest]/[method:addedToBasket()]
++----------------------------------------------------------------------------------------------------------+------------------------+------------+------------+
+| Element                                                                                                  | Subject                | Status     | ms.        |
++----------------------------------------------------------------------------------------------------------+------------------------+------------+------------+
+| By.xpath: //article/By.xpath: .//*[@class = 'product-card__name']                                        | get own text()         | PASS       | 35         |
+| By.xpath: //article/By.xpath: .//*[@class = 'product-card__brand']                                       | get text()             | PASS       | 84         |
+| By.xpath: //article/By.xpath: .//*[@class = 'product-card__price price']//*[@class='price__lower-price'] | get text()             | PASS       | 34         |
+| By.xpath: //article/By.xpath: .//*[@class = 'product-card__price price']//del                            | get text()             | PASS       | 32         |
+| By.xpath: //article                                                                                      | click()                | PASS       | 77         |
+| .general-preloader                                                                                       | should not be(visible) | PASS       | 20         |
+| By.xpath: //*[@class= 'product-page__header']//h1                                                        | get text()             | PASS       | 391        |
+| By.xpath: //*[@class= 'product-page__header']//span                                                      | get text()             | PASS       | 55         |
+| By.xpath: //*[@class= 'product-page__aside-sticky']//*[@class= 'price-block__price']                     | get text()             | PASS       | 82         |
+| By.xpath: //*[@class= 'product-page__aside-sticky']//del                                                 | get text()             | PASS       | 51         |
+| By.xpath: //*[@class = 'product-page__aside']//*[@class = 'order']                                       | click()                | PASS       | 149        |
+| By.xpath: //*[@class='action-notification__text']                                                        | should be(exist)       | PASS       | 303        |
+| back                                                                                                     |                        | PASS       | 25         |
+| .general-preloader                                                                                       | should not be(visible) | PASS       | 35         |
++----------------------------------------------------------------------------------------------------------+------------------------+------------+------------+
+
+[Test worker] INFO com.codeborne.selenide.logevents.SimpleReport - Report for [engine:junit-jupiter]/[class:wb_tests.WBTest]/[method:checkBasketProducts()]
++-------------------------------------------------------------------------------------------+-----------------------------+------------+------------+
+| Element                                                                                   | Subject                     | Status     | ms.        |
++-------------------------------------------------------------------------------------------+-----------------------------+------------+------------+
+| By.xpath: //*[@data-wba-header-name='Cart']                                               | click()                     | PASS       | 127        |
+| .general-preloader                                                                        | should not be(visible)      | PASS       | 373        |
+| By.xpath: //*[@class='basket-order__b-btn b-btn']                                         | should be(visible)          | PASS       | 36         |
+| By.xpath: //*[@class='list-item__wrap']/By.xpath: .//*[@class = 'list-item__price-new']   | should be(text "259 444 ?") | PASS       | 342        |
+| By.xpath: //*[@class='list-item__wrap']/By.xpath: .//*[@class='good-info__good-name']     | get own text()              | PASS       | 27         |
+| By.xpath: //*[@class='list-item__wrap']/By.xpath: .//*[@class = 'good-info__good-brand '] | get text()                  | PASS       | 33         |
+| By.xpath: //*[@class='list-item__wrap']/By.xpath: .//*[@class = 'list-item__price-new']   | get text()                  | PASS       | 29         |
+| By.xpath: //*[@class='list-item__wrap']/By.xpath: .//*[@class = 'list-item__price-old']   | get text()                  | PASS       | 33         |
++-------------------------------------------------------------------------------------------+-----------------------------+------------+------------+
+
+]]></system-err>
+</testsuite>
